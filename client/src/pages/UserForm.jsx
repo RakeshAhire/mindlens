@@ -12,8 +12,8 @@ const UserForm = () => {
     const getFormDetails = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/forms/getsingle/${id}`
-          // `http://localhost:8080/forms/getsingle/6620c85389f09eb5c59e7823`
+          `${process.env.REACT_APP_BACKEND_API}/forms/getsingle/${id}`
+          // `${process.env.REACT_APP_BACKEND_API}/forms/getsingle/6620c85389f09eb5c59e7823`
         );
         setFormData(res.data);
         console.log("res: ", res.data);
@@ -35,7 +35,7 @@ const UserForm = () => {
           categories: data.categories,
         };
         const res = await axios.post(
-          `http://localhost:8080/submissions/formsubmit`,
+          `${process.env.REACT_APP_BACKEND_API}/submissions/formsubmit`,
           payload
         );
         if (res.data.success) {

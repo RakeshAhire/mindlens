@@ -18,7 +18,7 @@ const CreateForm = () => {
           categories: data.categories,
         };
         const res = await axios.post(
-          `http://localhost:8080/forms/create`,
+          `${process.env.REACT_APP_BACKEND_API}/forms/create`,
           payload
         );
         console.log("res: ", res);

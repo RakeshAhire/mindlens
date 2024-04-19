@@ -11,8 +11,8 @@ const SubmissionSingleForm = () => {
     const getFormDetails = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/submissions/getsingle/${id}`
-          // `http://localhost:8080/submissions/getsingle/6620c85389f09eb5c59e7823`
+          `${process.env.REACT_APP_BACKEND_API}/submissions/getsingle/${id}`
+          // `${process.env.REACT_APP_BACKEND_API}/submissions/getsingle/6620c85389f09eb5c59e7823`
         );
         setFormData(res.data);
       } catch (error) {

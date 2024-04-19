@@ -9,7 +9,7 @@ const Submissions = () => {
     const getAllSubmissions = async () => {
       try {
         const res = await axios.get(
-          `http://localhost:8080/submissions/getall/`
+          `${process.env.REACT_APP_BACKEND_API}/submissions/getall/`
         );
         setSubmittedData(res.data);
       } catch (error) {

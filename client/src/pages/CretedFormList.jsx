@@ -8,7 +8,7 @@ const CretedFormList = () => {
   useEffect(() => {
     const getAllSubmissions = async () => {
       try {
-        const res = await axios.get(`http://localhost:8080/forms/getall/`);
+        const res = await axios.get(`${process.env.REACT_APP_BACKEND_API}/forms/getall/`);
         setFormData(res.data);
       } catch (error) {
         alert(error.message);
